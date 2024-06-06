@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математичні функції та константи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #2E86C1;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #5DADE2;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #3498DB;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Константи</h2>
+    <div class="container">
+        <ul>
+            <li>Значення константи е = <span id="const-e"></span></li>
+            <li>Значення константи π = <span id="const-pi"></span></li>
+            <li>Десятковий логарифм постійної Ейлера (е) = <span id="log10-e"></span></li>
+            <li>Двійковий логарифм постійної Ейлера (е) = <span id="log2-e"></span></li>
+            <li>Натуральний логарифм числа 10 = <span id="ln-10"></span></li>
+            <li>Натуральний логарифм числа 2 = <span id="ln-2"></span></li>
+            <li>Корінь квадратний із двох = <span id="sqrt-2"></span></li>
+            <li>Корінь квадратний з однієї другої = <span id="sqrt-1-2"></span></li>
+        </ul>
+    </div>
+
+    <h2>Функції</h2>
+    <div class="container">
+        <a class="btn" onclick="calculateLog2Of8()">Результат обчислення двійкового логарифма від числа 8</a>
+        <a class="btn" onclick="calculateTan45()">Тангенс 45 градусів (з округленням)</a>
+        <a class="btn" onclick="roundUp()">Результат округлення числа 1,00123 у більшу сторону</a>
+        <a class="btn" onclick="roundUpNegative()">Результат округлення числа -3.1234 у більшу сторону</a>
+        <a class="btn" onclick="roundDown()">Результат округлення числа 1,00123 у меншу сторону</a>
+    </div>
+
+    <h2>Генератор випадкових чисел</h2>
+    <div class="container">
+        <a class="btn" onclick="generateRandomNumber()">Формування випадкових чисел в інтервалі [0;1]</a>
+        <p id="random-number"></p>
+    </div>
+
+    <script>
+        // Виведення констант
+        document.getElementById('const-e').innerText = Math.E;
+        document.getElementById('const-pi').innerText = Math.PI;
+        document.getElementById('log10-e').innerText = Math.LOG10E;
+        document.getElementById('log2-e').innerText = Math.LOG2E;
+        document.getElementById('ln-10').innerText = Math.LN10;
+        document.getElementById('ln-2').innerText = Math.LN2;
+        document.getElementById('sqrt-2').innerText = Math.SQRT2;
+        document.getElementById('sqrt-1-2').innerText = Math.SQRT1_2;
+
+        // Функції
+        function calculateLog2Of8() {
+            alert('Результат обчислення двійкового логарифма від числа 8: ' + Math.log2(8));
+        }
+
+        function calculateTan45() {
+            alert('Тангенс 45 градусів (з округленням): ' + Math.round(Math.tan(45 * Math.PI / 180)));
+        }
+
+        function roundUp() {
+            alert('Результат округлення числа 1,00123 у більшу сторону: ' + Math.ceil(1.00123));
+        }
+
+        function roundUpNegative() {
+            alert('Результат округлення числа -3.1234 у більшу сторону: ' + Math.ceil(-3.1234));
+        }
+
+        function roundDown() {
+            alert('Результат округлення числа 1,00123 у меншу сторону: ' + Math.floor(1.00123));
+        }
+
+        // Генератор випадкових чисел
+        function generateRandomNumber() {
+            var randomNumber = Math.random();
+            document.getElementById('random-number').innerText = 'Випадкове число: ' + randomNumber;
+        }
+    </script>
+
+</body>
+</html>
